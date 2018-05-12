@@ -11,20 +11,21 @@ public class Book {
     private int id;
     private String title;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private BookCategory bookCategory;
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(joinColumns =
-    @JoinColumn(name = "book_id", referencedColumnName = "id"),
+    @JoinColumn(name = "book_id"),
             inverseJoinColumns =
-            @JoinColumn(name = "author_id",
-                    referencedColumnName = "id"))
+            @JoinColumn(name = "author_id"))
     private Set<BookAuthor> bookAuthors;
 
 
-    public Book(String title) {
+    public Book(String title, BookCategory bookCategory, Set<BookAuthor> bookAuthors) {
         this.title = title;
+        this.bookCategory = bookCategory;
+        this.bookAuthors = bookAuthors;
     }
 
     public Book () {}
