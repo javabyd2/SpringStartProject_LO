@@ -1,5 +1,8 @@
 package com.sda.spring.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -61,4 +64,5 @@ public class Book {
     public void setTitle(String title) {
         this.title = title;
     }
+
 }

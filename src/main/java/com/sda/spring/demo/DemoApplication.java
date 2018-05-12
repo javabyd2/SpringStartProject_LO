@@ -31,7 +31,9 @@ public class DemoApplication implements CommandLineRunner {
 		Set<BookAuthor> authors = new HashSet<BookAuthor>();
 		authors.add(new BookAuthor("Jan", "Kowalski"));
 		authors.add(new BookAuthor("Zbigniew", "Nowak"));
+
 		BookCategory category = new BookCategory("Lektury szkolne");
+
 
 		Book book = new Book("Przygoda", category, authors);
 		bookRepository.save(book);
