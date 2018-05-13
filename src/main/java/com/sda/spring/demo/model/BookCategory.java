@@ -1,6 +1,7 @@
 package com.sda.spring.demo.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -14,7 +15,6 @@ public class BookCategory {
     private Set<Book> books;
 
     public BookCategory(){
-
     }
 
     public BookCategory(String name) {
