@@ -24,6 +24,9 @@ public class Book {
             @JoinColumn(name = "author_id"))
     private Set<BookAuthor> bookAuthors;
 
+    @ManyToOne
+    private Publisher publisher;
+
 
     public Book(String title, BookCategory bookCategory, Set<BookAuthor> bookAuthors) {
         this.title = title;
@@ -32,6 +35,14 @@ public class Book {
     }
 
     public Book () {}
+
+    public Publisher getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(Publisher publisher) {
+        this.publisher = publisher;
+    }
 
     public BookCategory getBookCategory() {
         return bookCategory;
