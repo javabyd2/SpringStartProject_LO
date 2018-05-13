@@ -8,12 +8,10 @@ import com.sda.spring.demo.service.AuthorService;
 import com.sda.spring.demo.service.BookService;
 import com.sda.spring.demo.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class Controller {
@@ -42,6 +40,18 @@ public class Controller {
             @RequestBody BookCategory bookCategory
                                     ){
         return categoryService.save(bookCategory);
+    }
+
+    @RequestMapping(value = "/book", method = RequestMethod.POST)
+    public Book addBook(
+            @RequestBody Book book
+    ){
+        return bookService.save(book);
+    }
+
+    @RequestMapping(value = "/book/{id}", method = RequestMethod.GET)
+    public Optional<Book> getBookById(@PathVariable Long id){
+        return bookService.getBookById(id);
     }
 
     /*

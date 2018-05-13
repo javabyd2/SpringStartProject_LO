@@ -33,15 +33,15 @@ public class DemoApplication implements CommandLineRunner {
 
 //		Book book = bookRepository.findByTitle("Przygoda");
 
-		Set<BookAuthor> authors = new HashSet<BookAuthor>();
-		authors.add(new BookAuthor("Jan", "Kowalski"));
-		authors.add(new BookAuthor("Zbigniew", "Nowak"));
-
-		BookCategory category = new BookCategory("Lektury szkolne");
-
-
-		Book book = new Book("Przygoda", category, authors);
-		bookRepository.save(book);
+//		Set<BookAuthor> authors = new HashSet<BookAuthor>();
+//		authors.add(new BookAuthor("Jan", "Kowalski"));
+//		authors.add(new BookAuthor("Zbigniew", "Nowak"));
+//
+//		BookCategory category = new BookCategory("Lektury szkolne");
+//
+//
+//		Book book = new Book("Przygoda", category, authors);
+//		bookRepository.save(book);
 
 //		authors = new HashSet<BookAuthor>();
 //		authors.add(new BookAuthor("Adam", "Mickiewicz"));
