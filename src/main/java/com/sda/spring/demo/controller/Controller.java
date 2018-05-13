@@ -54,6 +54,16 @@ public class Controller {
         return bookService.getBookById(id);
     }
 
+    @RequestMapping(value = "/category/{id}", method = RequestMethod.GET)
+    public Optional<BookCategory> getBookCategoryById(@PathVariable Long id){
+        return categoryService.getCategoryById(id);
+    }
+
+    @RequestMapping(value = "/author/{id}", method = RequestMethod.GET)
+    public Optional<BookAuthor> getBookAuthorById(@PathVariable Long id){
+        return authorService.getAuthorById(id);
+    }
+
     /*
      - wszystkich autorow
      - wszystkich kategorii

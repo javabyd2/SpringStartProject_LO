@@ -9,7 +9,7 @@ public class BookCategory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Long id;
     private String name;
     @OneToMany(mappedBy = "bookCategory", cascade = CascadeType.ALL)
     private Set<Book> books;
@@ -21,11 +21,11 @@ public class BookCategory {
         this.name = name;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CategoryService {
@@ -23,5 +24,9 @@ public class CategoryService {
 
     public BookCategory save(BookCategory bookCategory) {
         return categoryRepository.save(bookCategory);
+    }
+
+    public Optional<BookCategory> getCategoryById(Long id) {
+        return categoryRepository.findById(id);
     }
 }
