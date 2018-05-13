@@ -8,6 +8,7 @@ import com.sda.spring.demo.service.AuthorService;
 import com.sda.spring.demo.service.BookService;
 import com.sda.spring.demo.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,6 +35,13 @@ public class Controller {
     @RequestMapping(value = "/books", method = RequestMethod.GET)
     public List<Book> showBookList(){
         return bookService.getBooks();
+    }
+
+    @RequestMapping(value = "/category", method = RequestMethod.POST)
+    public BookCategory addCategory(
+            @RequestBody BookCategory bookCategory
+                                    ){
+        return categoryService.save(bookCategory);
     }
 
     /*

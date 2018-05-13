@@ -21,5 +21,7 @@ public class CategoryService {
         return categoryRepository.findAll();
     }
 
-
+    public BookCategory save(BookCategory bookCategory) {
+        return categoryRepository.save(bookCategory);
+    }
 }
