@@ -8,6 +8,8 @@ import com.sda.spring.demo.service.AuthorService;
 import com.sda.spring.demo.service.BookService;
 import com.sda.spring.demo.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -50,8 +52,10 @@ public class Controller {
     }
 
     @RequestMapping(value = "/book/{id}", method = RequestMethod.GET)
-    public Optional<Book> getBookById(@PathVariable Long id){
-        return bookService.getBookById(id);
+    public ResponseEntity<Book> getBookById(@PathVariable Long id){
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(bookService.getBookById(id));
     }
 
     @RequestMapping(value = "/category/{id}", method = RequestMethod.GET)
