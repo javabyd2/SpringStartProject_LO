@@ -13,11 +13,7 @@ public class Role {
 
     @OneToMany(mappedBy = "role",cascade = CascadeType.ALL)
     //private  User user;
-
-
-
-
-            Set<User>userSet;
+    Set<User>userSet;
 
 
 

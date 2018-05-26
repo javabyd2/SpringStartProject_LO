@@ -1,5 +1,6 @@
 package com.sda.spring.demo.controller;
 
+import com.sda.spring.demo.dto.UserPropDTO;
 import com.sda.spring.demo.model.Book;
 import com.sda.spring.demo.model.BookAuthor;
 import com.sda.spring.demo.model.BookCategory;
@@ -7,6 +8,7 @@ import com.sda.spring.demo.repository.BookRepository;
 import com.sda.spring.demo.service.AuthorService;
 import com.sda.spring.demo.service.BookService;
 import com.sda.spring.demo.service.CategoryService;
+import com.sda.spring.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,6 +29,9 @@ public class Controller {
     @Autowired
     private AuthorService authorService;
 
+    @Autowired
+    private UserService userService;
+
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String hello(){
         return "Hello word";
@@ -35,6 +40,11 @@ public class Controller {
     @RequestMapping(value = "/books", method = RequestMethod.GET)
     public List<Book> showBookList(){
         return bookService.getBooks();
+    }
+
+    @RequestMapping(value = "/users", method = RequestMethod.GET)
+    public List<UserPropDTO> showUserProp(){
+        return userService.getUsers();
     }
 
     @RequestMapping(value = "/category", method = RequestMethod.POST)
