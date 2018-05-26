@@ -24,7 +24,7 @@ public class UserService {
 
         Optional<User> user = userRepository.findById(id);
         ModelMapper modelMapper = new ModelMapper();
-        UserDTO userDTO = modelMapper.map(user, UserDTO.class);
+        UserDTO userDTO = modelMapper.map(user.get(), UserDTO.class);
 
         return userDTO;
     }
