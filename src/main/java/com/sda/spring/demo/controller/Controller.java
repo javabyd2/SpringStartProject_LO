@@ -38,6 +38,7 @@ public class Controller {
         return "Hello word";
     }
 
+    @CrossOrigin(value = "http://localhost:3000")
     @RequestMapping(value = "/books", method = RequestMethod.GET)
     public List<Book> showBookList(){
         return bookService.getBooks();
